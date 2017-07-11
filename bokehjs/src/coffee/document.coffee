@@ -371,10 +371,10 @@ export class Document
           # note that we ignore instances that aren't updated (not in to_update)
           if v.id not of already_started and v.id of items
             already_started[v.id] = true
-            [same_as_v, attrs, was_new] = items[v.id]
+            [same_as_v, attrs, was_new1] = items[v.id]
             for a, e of attrs
               foreach_value(e, f)
-            f(v, attrs, was_new)
+            f(v, attrs, was_new1)
         else if isArray(v)
           for e in v
             foreach_value(e, f)
